@@ -1,16 +1,22 @@
-# rEFInd-clean
+## rEFInd-clean
 
 
-copy the themes folder and refind.conf in your esp/EFI/refind-directory
+Copy the `themes` folder and `refind.conf` in your `esp/EFI/refind-directory`
+
 ```shell
 git clone --depth=1 https://github.com/sainAk/refind-config.git
-sudo cp refind-config/{themes, refind.conf} esp/EFI/refind-directory
+sudo cp -r refind-config/{themes, refind.conf} /boot/efi/EFI/refind/
 ```
 
-remember to verify menuentries before installing this conf file
+Remember to verify UUIDs and paths before installing this conf file.
+to get the PARTUUID use this command:
 
-## preview
+```shell
+lsblk -p -o NAME,LABEL,PARTUUID
+```
 
-![screenshot](./.github/refind.png)
+### preview
+
+![screenshot](.github/refind.png)
 
 credits: https://github.com/bobafetthotmail/refind-theme-regular
